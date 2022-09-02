@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리뷰 목록</title>
+</head>
+
+<body>
+  <header>
+    <div class="title-container">
+      <div class="title-content">운동영상 리뷰</div>
+    </div>
+    <hr>
+  </header>
+  <main>
+    <div class="video-container">
+      <!-- 이거 바뀔거1 : 비디오 -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/gMaB-fG4u4g" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="review-container">
+      <div class="review-table-header">
+        <div class="add-review-button">
+          <input type="button" name="addreview" value="글작성">
+        </div>
+        <div class="search-area">
+          <input type="text" name="searchvideo" value="제목, 내용으로 검색">
+        </div>
+      </div>
+      <div class="review-content">
+        <div class="review">
+          <table>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>조회수</th>
+            <th>작성시간</th>
+            <!-- 이거 바뀔거 2 : 비디오 별 리뷰
+              <tr>
+                <td>1</td>
+                <td>첫글</td>
+                <td>ssafy</td>
+                <td>0</td>
+                <td>10:07</td>
+              </tr> -->
+          </table>
+        </div>
+        <div class="page-content">
+          <div class="arrow" id="left">
+            <input type="button" name="leftarrow" value="&#8592;">
+          </div>
+          <div class="page">
+            <div class="nowpage">1</div>
+          </div>
+          <div class="arrow" id="right">
+            <input type="button" name="leftarrow" value="&#8594;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>
