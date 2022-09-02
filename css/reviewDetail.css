@@ -1,0 +1,66 @@
+.title-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.review-detail-header {
+  display: flex;
+  justify-content: space-between
+}
+
+.edit-btn-container {
+  display: flex;
+}
+
+.go-list {
+  margin-left: 30px;
+}
+
+.edit-review {
+  margin-right: 10px;
+}
+
+.delete-review {
+  margin-right: 30px;
+}
+
+.review-detail-container {
+  margin : 40px 100px 40px 100px;
+  border: 1px solid lightgray;
+}
+
+.review-header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-title {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.editor-container {
+  display: flex;
+  justify-content: center;
+}
+
+.date-container {
+  display: flex;
+  justify-content: center;
+}
+
+.view-container {
+  display: flex;
+  justify-content: center;
+}
+
+.review-content-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+hr {
+  border-top: 1px solid grey;
+}
