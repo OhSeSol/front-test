@@ -28,5 +28,5 @@ function doEdit() {
 
 const cancelBtn = document.querySelector("#btnCancel");
 cancelBtn.addEventListener("click", ()=>{
-  window.close();
+  window.close(); 
 })
