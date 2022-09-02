@@ -22,7 +22,7 @@ window.onload = function () {
         // 자동차 data 삽입할 html 요소 찾기
         let videoList = document.querySelector("#hotVideoList");
         for (let i = 0; i < resJson.length; i++) {
-          if (i < 3) {
+          if (i > 4) {
             let videoCard =`
               <div class="card" style="width: 18rem;">
                 <a href="reviewList.html?idx=${i}">
