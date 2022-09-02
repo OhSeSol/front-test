@@ -22,11 +22,12 @@ window.onload = function () {
         // 자동차 data 삽입할 html 요소 찾기
         let videoList = document.querySelector("#hotVideoList");
         for (let i = 0; i < resJson.length; i++) {
-          let videoCard =
-            `<div class="card" style="width: 18rem;">
-              <a href="reviewList.html?idx=${i}">
-                <img class="card-img-top" src="./img/thumbnail${i+1}.jpg" alt="Card image cap" id="video${i+1}">
-              </a>
+          if (i < 3) {
+            let videoCard =`
+              <div class="card" style="width: 18rem;">
+                <a href="reviewList.html?idx=${i}">
+                  <img class="card-img-top" src="./img/thumbnail${i + 1}.jpg" alt="Card image cap" id="video${i + 1}">
+                </a>
                 <div class="card-body">
                   <p class="card-text">
                     <div class="card-upper">
@@ -40,19 +41,21 @@ window.onload = function () {
                   </p>
                   <div class="btns">
                     <div class="part">
-                    ${resJson[i].part}
+                      ${resJson[i].part}
                     </div>
                     <div class="creator">
-                    ${resJson[i].channelName}
+                      ${resJson[i].channelName}
                     </div>
-                  </div>  
+                  </div>
                 </div>
-            </div>`
-            ;
+              </div>
+              `
+              ;
           videoList.innerHTML += videoCard;
+          }
           localStorage.setItem(`video${i}`, JSON.stringify(resJson[i]));
-          if(localStorage.getItem(`reviews${i}`)==null){
-            localStorage.setItem(`reviews${i}`, new Array());  
+          if (localStorage.getItem(`reviews${i}`) == null) {
+            localStorage.setItem(`reviews${i}`, new Array());
           }
         }
       }
@@ -104,3 +107,16 @@ function login() {
     alert("로그인 실패 !");
   }
 }
+let isTotal = false;
+let isUpper = false;
+let isLeg = false;
+let isStomach = false;
+
+let btnTotal = document.querySelector("#total");
+btnTotal.addEventListener("click", doShow("total"));
+let btnUpper = document.querySelector("#upper");
+btnTotal.addEventListener("click", doShow("upper"));
+let btnLeg = document.querySelector("#leg");
+btnTotal.addEventListener("click", doShow("leg"));
+let btnStomach = document.querySelector("#stomach");
+btnTotal.addEventListener("click", doShow("stomach"));

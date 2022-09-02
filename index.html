@@ -53,27 +53,27 @@
       placeholder="영상 제목 검색">
   </div>
   <div id="hot">
-    <h4>최근 가장 많이 본 영상</h4>
+    <h4>최근 업로드영상</h4>
     <div id="hotVideo">
       <button id="prev">&lang;</button>
-      <div id="hotVideoList"></div> 
+      <div id="hotVideoList"></div>
       <button id="next">&rang;</button>
     </div>
   </div>
   <div id="part">
     <h4>운동 부위 선택</h4>
     <div id="category">
-      <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-        <input type="checkbox" class="btn-check" id="total" autocomplete="off">
+      <div class="btn-group">
+        <input type="radio" class="btn-check" name="options" id="total" autocomplete="off">
         <label class="btn btn-outline-primary" for="total">전신</label>
 
-        <input type="checkbox" class="btn-check" id="upper" autocomplete="off">
+        <input type="radio" class="btn-check" name="options" id="upper" autocomplete="off" checked>
         <label class="btn btn-outline-primary" for="upper">상체</label>
 
-        <input type="checkbox" class="btn-check" id="leg" autocomplete="off">
+        <input type="radio" class="btn-check" name="options" id="leg" autocomplete="off">
         <label class="btn btn-outline-primary" for="leg">하체</label>
 
-        <input type="checkbox" class="btn-check" id="stomach" autocomplete="off">
+        <input type="radio" class="btn-check" name="options" id="stomach" autocomplete="off">
         <label class="btn btn-outline-primary" for="stomach">복부</label>
       </div>
     </div>
