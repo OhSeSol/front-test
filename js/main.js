@@ -35,7 +35,7 @@ window.onload = function () {
                         ${resJson[i].title}
                       </div>
                       <div class="viewicon">
-                        V
+                        <i class="bi bi-eye"></i>
                       </div>
                     </div>
                   </p>
@@ -98,7 +98,7 @@ function doShow() {
                       ${videoInfo.title}
                     </div>
                     <div class="viewicon">
-                      V
+                      <i class="bi bi-eye"></i>
                     </div>
                   </div>
                 </p>
@@ -131,7 +131,7 @@ function doShow() {
                       ${videoInfo.title}
                     </div>
                     <div class="viewicon">
-                      V
+                      <i class="bi bi-eye"></i>
                     </div>
                   </div>
                 </p>
@@ -164,7 +164,7 @@ function doShow() {
                       ${videoInfo.title}
                     </div>
                     <div class="viewicon">
-                      V
+                      <i class="bi bi-eye"></i>
                     </div>
                   </div>
                 </p>
@@ -197,7 +197,7 @@ function doShow() {
                       ${videoInfo.title}
                     </div>
                     <div class="viewicon">
-                      V
+                      <i class="bi bi-eye"></i>
                     </div>
                   </div>
                 </p>
