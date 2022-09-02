@@ -1,0 +1,49 @@
+#searchVideo{
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+#hot{
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+#hotVideo{
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  justify-content: space-between;
+}
+
+#hotVideoList{
+  display: flex;
+  justify-content: center;
+}
+
+#part{
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+#partVideo{
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  justify-content: space-between;
+}
+
+#partVideoList{
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox{
+  display: none;
+}
