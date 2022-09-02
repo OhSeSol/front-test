@@ -51,22 +51,15 @@ window.onload = function () {
             ;
           videoList.innerHTML += videoCard;
           localStorage.setItem(`video${i}`, JSON.stringify(resJson[i]));
-          localStorage.setItem(`reviews${i}`, new Array());  
+          if(localStorage.getItem(`reviews${i}`)==null){
+            localStorage.setItem(`reviews${i}`, new Array());  
+          }
         }
       }
     }
   };
   xhr.send();
 };
-
-
-function Review(name, title, content, view, time){
-  this.name = name;
-  this.title = title;
-  this.content= content;
-  this.view = view;
-  this.time = time;
-}
 
 function regist() {
   let id = document.getElementById("id").value;

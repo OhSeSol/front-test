@@ -6,20 +6,21 @@ const urlParam = url.searchParams;
 let reviewIdx = urlParam.get('reviewIdx');
 let videoIdx = urlParam.get('videoIdx');
 
-let jsonData = localStorage.getItem(`reviews${reviewIdx}`);
+let jsonData = localStorage.getItem(`reviews${videoIdx}`);
 let allReview = JSON.parse(jsonData);
 
-let title = allReview[videoIdx].title;
-let editor = allReview[videoIdx].name;
-let content = allReview[videoIdx].content;
-let view = allReview[videoIdx].viwe;
-let time = allReview[videoIdx].time;
+let title = allReview[reviewIdx].title;
+let editor = allReview[reviewIdx].name;
+let content = allReview[reviewIdx].content;
+let view = allReview[reviewIdx].view;
+let time = allReview[reviewIdx].time;
 
-document.querySelector(".review-title").innerHTML = `<b>${title}</b>`
+console.log(allReview[reviewIdx].title);
+document.querySelector(".review-title").innerHTML = `<b>${title}</b>`;
 document.querySelector(".editor").innerHTML = editor;
 document.querySelector(".date").innerHTML = time;
-document.querySelector(".review-title").innerHTML = view;
-document.querySelector("review-content").innerHTML = content;
+document.querySelector(".view").innerHTML = view;
+document.querySelector(".review-content").innerHTML = content;
 
 let btnEdit = document.querySelector("#editbtn");
 btnEdit.addEventListener("click", doEdit);
