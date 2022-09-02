@@ -51,13 +51,22 @@ window.onload = function () {
             ;
           videoList.innerHTML += videoCard;
           localStorage.setItem(`video${i}`, JSON.stringify(resJson[i]));
+          localStorage.setItem(`reviews${i}`, new Array());  
         }
       }
     }
   };
-  // 요청 보내기
   xhr.send();
 };
+
+
+function Review(name, title, content, view, time){
+  this.name = name;
+  this.title = title;
+  this.content= content;
+  this.view = view;
+  this.time = time;
+}
 
 function regist() {
   let id = document.getElementById("id").value;
