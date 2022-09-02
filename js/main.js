@@ -22,8 +22,8 @@ window.onload = function () {
         // 자동차 data 삽입할 html 요소 찾기
         let videoList = document.querySelector("#hotVideoList");
         for (let i = 0; i < resJson.length; i++) {
-          if (i > 4) {
-            let videoCard =`
+          if (3 < i && i < 7) {
+            let videoCard = `
               <div class="card" style="width: 18rem;">
                 <a href="reviewList.html?idx=${i}">
                   <img class="card-img-top" src="./img/thumbnail${i + 1}.jpg" alt="Card image cap" id="video${i + 1}">
@@ -35,7 +35,7 @@ window.onload = function () {
                         ${resJson[i].title}
                       </div>
                       <div class="viewicon">
-                        V
+                        <i class="bi bi-eye"></i>
                       </div>
                     </div>
                   </p>
@@ -47,11 +47,11 @@ window.onload = function () {
                       ${resJson[i].channelName}
                     </div>
                   </div>
-                </div>
-              </div>
-              `
+                  </div>
+                  </div>
+                  `
               ;
-          videoList.innerHTML += videoCard;
+            videoList.innerHTML += videoCard;
           }
           localStorage.setItem(`video${i}`, JSON.stringify(resJson[i]));
           if (localStorage.getItem(`reviews${i}`) == null) {
@@ -64,59 +64,155 @@ window.onload = function () {
   xhr.send();
 };
 
-function regist() {
-  let id = document.getElementById("id").value;
-  let password = document.getElementById("password").value;
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let age = document.getElementById("age").value;
-
-  if (!id || !password || !name || !email || !age) {
-    alert("빈칸이 없도록 입력해주세요.");
-    return;
-  } else {
-    const user = {
-      id: id,
-      password: password,
-      name: name,
-      email: email,
-      age: age,
-    };
-
-    localStorage.setItem("user", JSON.stringify(user));
-    alert("사용자 등록 성공!");
-    window.location.replace("login.html");
-  }
-}
-
-function login() {
-  let id = document.getElementById("id").value;
-  let password = document.getElementById("password").value;
-
-  const user = JSON.parse(localStorage.getItem("user"));
-
-  if (
-    user.id &&
-    user.password &&
-    user.id === id &&
-    user.password === password
-  ) {
-    alert("로그인 성공 !");
-    window.location.replace("index.html");
-  } else {
-    alert("로그인 실패 !");
-  }
-}
-let isTotal = false;
-let isUpper = false;
-let isLeg = false;
-let isStomach = false;
-
 let btnTotal = document.querySelector("#total");
-btnTotal.addEventListener("click", doShow("total"));
+btnTotal.addEventListener("click", doShow);
 let btnUpper = document.querySelector("#upper");
-btnTotal.addEventListener("click", doShow("upper"));
+btnUpper.addEventListener("click", doShow);
 let btnLeg = document.querySelector("#leg");
-btnTotal.addEventListener("click", doShow("leg"));
+btnLeg.addEventListener("click", doShow);
 let btnStomach = document.querySelector("#stomach");
-btnTotal.addEventListener("click", doShow("stomach"));
+btnStomach.addEventListener("click", doShow);
+
+
+let partCard = document.querySelector("#partVideoList");
+let idx = 0;
+let jsonData = localStorage.getItem(`video${idx}`);
+let videoInfo = JSON.parse(jsonData);
+console.log(document.getElementById('upper').checked)
+
+
+function doShow() {
+  if (document.getElementById('total').checked) {
+    partCard.innerHTML = '';
+    for (let idx = 0; idx < 8; idx++) {
+      let jsonData = localStorage.getItem(`video${idx}`);
+      let videoInfo = JSON.parse(jsonData);
+      if (videoInfo.part === "전신") {
+        partCard.innerHTML += `
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./img/thumbnail${idx + 1}.jpg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">
+                  <div class="card-upper">
+                    <div class="summary">
+                      ${videoInfo.title}
+                    </div>
+                    <div class="viewicon">
+                      <i class="bi bi-eye"></i>
+                    </div>
+                  </div>
+                </p>
+                <div class="btns">
+                  <div class="part">
+                    ${videoInfo.part}
+                  </div>
+                  <div class="creator">
+                    ${videoInfo.channelName}
+                  </div>
+                </div>
+              </div>
+          </div>
+        `
+      }
+    }
+  } else if (document.getElementById('upper').checked) {
+    partCard.innerHTML = '';
+    for (let idx = 0; idx < 8; idx++) {
+      let jsonData = localStorage.getItem(`video${idx}`);
+      let videoInfo = JSON.parse(jsonData);
+      if (videoInfo.part === "상체") {
+        partCard.innerHTML += `
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./img/thumbnail${idx + 1}.jpg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">
+                  <div class="card-upper">
+                    <div class="summary">
+                      ${videoInfo.title}
+                    </div>
+                    <div class="viewicon">
+                      <i class="bi bi-eye"></i>
+                    </div>
+                  </div>
+                </p>
+                <div class="btns">
+                  <div class="part">
+                    ${videoInfo.part}
+                  </div>
+                  <div class="creator">
+                    ${videoInfo.channelName}
+                  </div>
+                </div>
+              </div>
+          </div>
+        `
+      }
+    }
+  } else if (document.getElementById("leg").checked) {
+    partCard.innerHTML = '';
+    for (let idx = 0; idx < 8; idx++) {
+      let jsonData = localStorage.getItem(`video${idx}`);
+      let videoInfo = JSON.parse(jsonData);
+      if (videoInfo.part === "하체") {
+        partCard.innerHTML += `
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./img/thumbnail${idx + 1}.jpg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">
+                  <div class="card-upper">
+                    <div class="summary">
+                      ${videoInfo.title}
+                    </div>
+                    <div class="viewicon">
+                      <i class="bi bi-eye"></i>
+                    </div>
+                  </div>
+                </p>
+                <div class="btns">
+                  <div class="part">
+                    ${videoInfo.part}
+                  </div>
+                  <div class="creator">
+                    ${videoInfo.channelName}
+                  </div>
+                </div>
+              </div>
+          </div>
+        `
+      }
+    }
+  } else if (document.getElementById("stomach").checked) {
+    partCard.innerHTML = '';
+    for (let idx = 0; idx < 8; idx++) {
+      let jsonData = localStorage.getItem(`video${idx}`);
+      let videoInfo = JSON.parse(jsonData);
+      if (videoInfo.part === "복부") {
+        partCard.innerHTML += `
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./img/thumbnail${idx + 1}.jpg" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">
+                  <div class="card-upper">
+                    <div class="summary">
+                      ${videoInfo.title}
+                    </div>
+                    <div class="viewicon">
+                      <i class="bi bi-eye"></i>
+                    </div>
+                  </div>
+                </p>
+                <div class="btns">
+                  <div class="part">
+                    ${videoInfo.part}
+                  </div>
+                  <div class="creator">
+                    ${videoInfo.channelName}
+                  </div>
+                </div>
+              </div>
+          </div>
+        `
+      }
+    }
+  }
+}
