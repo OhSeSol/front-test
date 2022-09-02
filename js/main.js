@@ -1,3 +1,23 @@
+
+let isLogined = localStorage.getItem("isLogined");
+let login = document.querySelector("#login");
+let signup = document.querySelector("#signup");
+let logout = document.querySelector("#logout");
+if (isLogined=="true") {
+  login.style.display = "none";
+  signup.style.display = "none";
+  logout.style.display = "block";
+} else {
+  login.style.display = "block";
+  signup.style.display = "block";
+  logout.style.display = "none";
+}
+
+logout.addEventListener("click", ()=>{
+  localStorage.setItem("isLogined", false);
+  location.reload();
+})
+
 window.onload = function () {
   let videos = [];
   if (!document.querySelector("#hotVideoList")) return;
@@ -78,7 +98,6 @@ let partCard = document.querySelector("#partVideoList");
 let idx = 0;
 let jsonData = localStorage.getItem(`video${idx}`);
 let videoInfo = JSON.parse(jsonData);
-console.log(document.getElementById('upper').checked)
 
 
 function doShow() {
@@ -216,3 +235,5 @@ function doShow() {
     }
   }
 }
+
+
