@@ -1,0 +1,56 @@
+.title-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+}
+
+.review-table-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.col-sm-10 {
+  display: flex;
+}
+
+.glass {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+hr {
+  border-top: 1px solid grey;
+}
+
+.add-review-button {
+  margin-left: 50px;
+}
+
+.search-area {
+  margin-right: 50px;
+}
+
+.page-content {
+  display: flex;
+  justify-content: center;
+}
+
+.arrow {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.page {
+  margin-left: 5px;
+  margin-right: 5px;
+}
