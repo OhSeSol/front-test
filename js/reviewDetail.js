@@ -15,11 +15,11 @@ let content = allReview[videoIdx].content;
 let view = allReview[videoIdx].viwe;
 let time = allReview[videoIdx].time;
 
-document.querySelector(".review-title").innerHTML = `<b>${title}</b>`
+document.querySelector(".review-title").innerHTML = `<b>${title}</b>`;
 document.querySelector(".editor").innerHTML = editor;
 document.querySelector(".date").innerHTML = time;
 document.querySelector(".review-title").innerHTML = view;
-document.querySelector("review-content").innerHTML = content;
+document.querySelector(".review-content").innerHTML = content;
 
 let btnEdit = document.querySelector("#editbtn");
 btnEdit.addEventListener("click", doEdit);
